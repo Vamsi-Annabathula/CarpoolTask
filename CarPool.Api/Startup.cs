@@ -37,7 +37,7 @@ namespace CarPool.Api
                 });
             });
 
-            services.AddTransient<IUserProfile, UserProfile>();
+            services.AddTransient<IUser, User>();
             services.AddTransient<IPassengerServie, PassengerService>();
             services.AddTransient<IRiderService, RiderService>();
             services.AddTransient<IRideService, RideService>();

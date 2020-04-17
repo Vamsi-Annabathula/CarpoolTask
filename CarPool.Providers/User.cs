@@ -8,15 +8,15 @@ using System.Text;
 
 namespace CarPool.Services
 {
-    public class UserProfile: IUserProfile
+    public class User: IUser
     {
         protected readonly CarPoolDBContext _context;
 
-        public UserProfile(CarPoolDBContext context)
+        public User(CarPoolDBContext context)
         {
             _context = context;
         }
-        public User GetUserProfile(long phoneNumber)
+        public Domain.Entities.User GetUserProfile(long phoneNumber)
         {
             return _context.User.Where(s=> s.PhoneNumber == phoneNumber).FirstOrDefault();
             

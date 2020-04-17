@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CarPool.IServices
 {
-    public interface IUserProfile
+    public interface IUser
     {
         User GetUserProfile(long phoneNumber);
     }

@@ -1,4 +1,5 @@
 ﻿using Application.CarPool.Concern;
+using CarPool.Contract;
 using CarPool.Persistence;
 using System.Linq;
 using De = CarPool.Domain.Entities;
@@ -6,7 +7,7 @@ using Vm = Application.CarPool.Concern;
 
 namespace CarPool.Services
 {
-    public class AuthenticationService
+    public class AuthenticationService: IAuthenticationService
     {
         protected readonly CarPoolDBContext _context;
 

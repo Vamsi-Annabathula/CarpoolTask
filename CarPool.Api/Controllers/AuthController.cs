@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using CarPool.Domain.Entities;
-using CarPool.IServices;
+using CarPool.Contract;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,35 +10,31 @@ namespace CarPool.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProfileController : ControllerBase
+    public class AuthController : ControllerBase
     {
-        private readonly IUser _userprofile;
+        private readonly IAuthenticationService _authenticationService;
 
-        public ProfileController(IUser userProfile)
-        {
-            _userprofile = userProfile;
-        }
-        // GET: api/Profile
+        // GET: api/Auth
         [HttpGet]
-        public IEnumerable<string> Get() 
+        public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };
         }
 
-        // GET: api/Profile/5
-        [HttpGet("{phoneNumber}", Name = "GetProfile")]
-        public User Get(long phoneNumber)
+        // GET: api/Auth/5
+        [HttpGet("{id}", Name = "Get")]
+        public string Get(int id)
         {
-            return _userprofile.GetUserProfile(phoneNumber);
+            return "value";
         }
 
-        // POST: api/Profile
+        // POST: api/Auth
         [HttpPost]
         public void Post([FromBody] string value)
         {
         }
 
-        // PUT: api/Profile/5
+        // PUT: api/Auth/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {
