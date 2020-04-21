@@ -1,19 +1,26 @@
 ﻿using CarPool.Domain.Entities;
+using Con = Application.CarPool.Concern;
 using System;
-  
+using CarPool.Concerns;
+using System.Collections.Generic;
+
 namespace CarPool.IServices
 {
     public interface IRideService
     {
-        void PostRide(RideProvider ride);
+        void PostRide(Ride ride);
 
-        void RequestRide(PassengerRide ride);
+        void BookRide(Con.PassengerRide ride, string rideId);
 
-        void CancelOfferedRide(Guid offeredRideId);
+        bool CancelOfferedRide(string offeredRideId);
 
-        string CancelBookedRide(Guid passengerRideId);
+        bool CancelBookedRide(string passengerRideId);
 
-        void RescheduleOfferedRide(Guid offeredRideId, DateTime startTime);
+        List<Con.PassengerRide> GetRideBookings(string rideId);
+
+        List<Ride> GetRides(string userId);
+
+        //void RescheduleOfferedRide(string offeredRideId, DateTime startTime);
 
     }         
 }

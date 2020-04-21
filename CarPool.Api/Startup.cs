@@ -1,6 +1,7 @@
+using CarPool.Contract;
 using CarPool.IServices;
 using CarPool.Persistence;
-using CarPool.Services;
+using CarPool.Api;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -37,9 +38,9 @@ namespace CarPool.Api
                 });
             });
 
-            services.AddTransient<IUser, User>();
+            services.AddTransient<IUser, UserService>();
+            services.AddTransient<IAuthenticationService, AuthenticationService>();
             services.AddTransient<IPassengerServie, PassengerService>();
-            services.AddTransient<IRiderService, RiderService>();
             services.AddTransient<IRideService, RideService>();
             services.AddTransient<IVehicleService, VehicleService>();
             services.AddTransient<IFareService, FareService>();

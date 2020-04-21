@@ -7,9 +7,11 @@ namespace Application.CarPool.Concern
 {
     public class Vehicle
     {
-        public Guid Id { get; set; }
+        public string Id { get; set; }
 
         public string VIN { get; set; }
+
+        public string UserId { get; set; }
 
         public VehicleType Type { get; set; }
 

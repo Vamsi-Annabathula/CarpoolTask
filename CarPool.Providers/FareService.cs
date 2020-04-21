@@ -1,4 +1,4 @@
-﻿using Application.CarPool.Concern;
+﻿using CarPool.Domain.Entities;
 using CarPool.IServices;
 using CarPool.Persistence;
 using System;
@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace CarPool.Services
+namespace CarPool.Api
 {
     public class FareService: IFareService
     {
@@ -15,17 +15,11 @@ namespace CarPool.Services
         {
             _context = context;
         }
-        public decimal CalculateFare(decimal kms, DateTime startTime )
+        public decimal CalculateFare(string id)
         {
-            return AppConstants.FarePerMin * DateTime.Now.Subtract(startTime).Minutes; 
-        }
-
-        public  void PostFare(Application.CarPool.Concern.UserProfile user, decimal fare)
-        {
-                var userInfo = _context.User.Where(s => s.PhoneNumber == user.PhoneNumber).FirstOrDefault();
-                var ride = _context.PassengerRides.Where(s => s.UserId == userInfo.Id).FirstOrDefault();
-                ride.RideFare = fare;
-                _context.SaveChanges();
+            PassengerRide booking = _context.PassengerRides?.FirstOrDefault(s => s.Id == id);
+            return booking.FarePerKM * booking.Distance;
+            //DateTime.Now.Subtract(booking.StartTime).Minutes
         }
     }
 }

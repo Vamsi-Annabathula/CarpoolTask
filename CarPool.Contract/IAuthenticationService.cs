@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CarPool.Concerns;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using Vm = Application.CarPool.Concern;
@@ -7,10 +8,10 @@ namespace CarPool.Contract
 {
     public interface IAuthenticationService
     {
-        bool ValidateLogIn(Vm.UserProfile userRegistration, string password);
+        bool ValidateLogIn(LoginForm loginForm);
 
-        bool ValidateRegister(Vm.UserProfile userRegistration);
+        bool ValidateRegister(long phoneNumber, string emailAddress);
 
-        void UserRegistration(Vm.UserProfile userRegistration, string password);
+        void UserRegistration(Vm.UserProfile userRegistration);
     }
 }

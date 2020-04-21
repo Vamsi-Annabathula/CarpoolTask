@@ -4,8 +4,10 @@ using System;
 using System.Linq;
 using DE = CarPool.Domain.Entities;
 using CarPool.Persistence;
+using CarPool.Providers;
+using System.Collections.Generic;
 
-namespace CarPool.Services
+namespace CarPool.Api
 {
     public class VehicleService: IVehicleService
     {
@@ -14,30 +16,31 @@ namespace CarPool.Services
         {
             _context = carPoolContext;
         }
-        public void AddVehicle(Vehicle vehicle, long phoneNumber)
+        public void AddVehicle(Vehicle vehicle, string userId)
         {
             //Data.DataModels.UserInformation _user= _contextUser.Where(s => s.Id == user.Id).FirstOrDefault();
-            DE.User userDetails = _context.User.Find(phoneNumber);
-            userDetails.Vehicles.Add(new DE.Vehicle
+            if (userId != null)
             {
-                VIN = vehicle.VIN,
-                Capacity = vehicle.Capacity,
-                UserId = userDetails.Id,
-                IsRemoved = false
-            });
-            _context.SaveChanges();
+                vehicle.Id = Guid.NewGuid().ToString();
+                vehicle.UserId = userId;
+                _context.Vehicles.Add(Mapper.Map<Vehicle, DE.Vehicle>(vehicle));
+                _context.SaveChanges();
+            }
         }
         public bool IsVehiclePresent(string VIN)
         {
-            bool result = true;
-                result = _context.Vehicles.Any(s => s.VIN == VIN) ? true : false;
-            return result;
+            return _context.Vehicles.Any(s => s.VIN == VIN) ? true : false;
         }
         public void RemoveVehicle(string vin)
         {
                 DE.Vehicle vehicle = _context.Vehicles.Find(vin);
                 vehicle.IsRemoved = true;
                 _context.SaveChanges();
+        }
+
+        public IEnumerable<Vehicle> GetUserVehicle(string id)
+        {
+            return Mapper.Map<List<DE.Vehicle>, List<Vehicle>>(_context.Vehicles?.Where(a => a.UserId == id).Select(a => a).ToList()).AsEnumerable();
         }
     }
 }

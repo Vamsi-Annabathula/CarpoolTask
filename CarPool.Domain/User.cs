@@ -13,9 +13,8 @@ namespace CarPool.Domain.Entities
         }
 
         [Key]
-        public Guid Id { get; set; }    
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+        public string Id { get; set; }    
+        public string Name { get; set; }
 
         [Phone]
         [Required]
@@ -25,7 +24,11 @@ namespace CarPool.Domain.Entities
         [EmailAddress]
         public string Email { get; set; }
 
-        public UserAuthentication UserAuth { get; set; }
+        public string Password { get; set; }
+        public bool IsRemoved { get; set; }
+
+        public ICollection<RideProvider> Rides { get; set; }
+        public ICollection<PassengerRide> Bookings { get; set; }
         public ICollection<Vehicle> Vehicles { get; set; }
     }
 }

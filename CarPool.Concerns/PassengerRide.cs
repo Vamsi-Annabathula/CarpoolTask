@@ -16,11 +16,16 @@ namespace Application.CarPool.Concern
 
         public DateTime EndTime { get; set; }
 
+        public Decimal Distance { get; set; }
+
         public DateTime Date { get; set; }
 
-        public Guid UserId { get; set; }
+        public string UserId { get; set; }
 
-        public Vehicle Vehicle { get; set; }
+        public string RideId { get; set; }
 
+        public int RequestedSeats { get; set; }
+
+        public decimal RideFare { get; set; }
     }
 }

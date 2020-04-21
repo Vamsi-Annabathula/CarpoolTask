@@ -26,7 +26,7 @@ namespace CarPool.Domain.Enum
 
     public enum BookingStatus
     {
-        Booked,
+        Booked = 1,
         Pending,
         Cancelled
     }

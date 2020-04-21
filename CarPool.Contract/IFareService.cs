@@ -6,6 +6,6 @@ namespace CarPool.IServices
 {
     public interface IFareService
     {
-        public decimal CalculateFare(decimal kms, DateTime startTime);
+        decimal CalculateFare(string id);
     }
 }

@@ -1,11 +1,14 @@
 ﻿using Application.CarPool.Concern;
+using CarPool.Concerns;
 using CarPool.Contract;
 using CarPool.Persistence;
+using CarPool.Providers;
+using System;
 using System.Linq;
 using De = CarPool.Domain.Entities;
 using Vm = Application.CarPool.Concern;
 
-namespace CarPool.Services
+namespace CarPool.Api
 {
     public class AuthenticationService: IAuthenticationService
     {
@@ -22,10 +25,9 @@ namespace CarPool.Services
         //}
 
         //TODO LOGIN
-        public bool ValidateLogIn(Vm.UserProfile userRegistration, string password)
+        public bool ValidateLogIn(LoginForm loginForm)
         {
-            var user = _context.User.Where(s => s.PhoneNumber == userRegistration.PhoneNumber).FirstOrDefault();
-            string userPassword = _context.UserAuth.Where(s => s.UserId == user.Id).FirstOrDefault().Password;
+            var user = _context.Users.Where(s => s.PhoneNumber == loginForm.PhoneNumber).FirstOrDefault();
             //var user = _context.UserAuth.Find(userRegistration.PhoneNumber);
             if (user == null)
             {
@@ -33,34 +35,37 @@ namespace CarPool.Services
             }
             else
             {
-                return user.PhoneNumber == userRegistration.PhoneNumber && userPassword == password;
+                return user.PhoneNumber == loginForm.PhoneNumber && user.Password == loginForm.Password;
             }
 
         }
-        public bool ValidateRegister(Vm.UserProfile userRegistration)
+        public bool ValidateRegister(long phoneNumber, string emailAddress)
         {
-                if (_context.User.Find(userRegistration.PhoneNumber) == null)
+                if (_context.Users.Find(phoneNumber) == null)
                 {
                     return true;
                 }
-                else if (_context.User.Find(userRegistration.EmailAddress) == null)
+                else if (_context.Users.Find(emailAddress) == null)
                 {
                     return true;
                 }
             return false;
         }
 
-        public void UserRegistration(Vm.UserProfile userRegistration, string password)
+        public void UserRegistration(UserProfile userRegistration)
         {
-                _context.User.Add(new De.User
-                {
-                    FirstName = userRegistration.FirstName,
-                    LastName = userRegistration.LastName,
-                    PhoneNumber = userRegistration.PhoneNumber,
-                    Email = userRegistration.EmailAddress,
-                    UserAuth = new De.UserAuthentication { IsActive = true, Password = password }
-                });
-                _context.SaveChanges();
+            userRegistration.Id = Guid.NewGuid().ToString();
+            var userData = Mapper.Map<UserProfile, De.User>(userRegistration);
+            _context.Users.Add(userData);
+            //_context.User.Add(new De.User
+            //    {
+            //        Name = userRegistration.Name,
+            //        LastName = userRegistration.LastName,
+            //        PhoneNumber = userRegistration.PhoneNumber,
+            //        Email = userRegistration.EmailAddress,
+            //        UserAuth = new De.UserAuthentication { IsActive = true, Password = password }
+            //    });
+            _context.SaveChanges();
         }
     }
 }

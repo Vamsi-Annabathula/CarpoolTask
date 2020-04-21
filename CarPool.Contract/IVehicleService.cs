@@ -7,10 +7,12 @@ namespace CarPool.IServices
 {
     public interface IVehicleService
     {
-        void AddVehicle(Vehicle vehicle, long phoneNumber);
+        void AddVehicle(Vehicle vehicle, string userId);
 
         bool IsVehiclePresent(string VIN);
 
         void RemoveVehicle(string vin);
+
+        IEnumerable<Vehicle> GetUserVehicle(string id);
     }
 }

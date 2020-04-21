@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Application.CarPool.Concern;
+using CarPool.IServices;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,6 +14,14 @@ namespace CarPool.Api.Controllers
     [ApiController]
     public class BookedRideController : ControllerBase
     {
+        private IPassengerServie _bookingService;
+        private IRideService _rideService;
+
+        public BookedRideController(IPassengerServie bookingService, IRideService rideService)
+        {
+            _bookingService = bookingService;
+            _rideService = rideService;
+        }
         // GET: api/BookedRide
         [HttpGet]
         public IEnumerable<string> Get()
@@ -25,10 +36,25 @@ namespace CarPool.Api.Controllers
             return "value";
         }
 
-        // POST: api/BookedRide
-        [HttpPost]
-        public void Post([FromBody] string value)
+        [AllowAnonymous]
+        [HttpGet]
+        [ActionName("riderslist")]
+        public IActionResult GetRidesOffers(PassengerRide booking)
         {
+            return Ok(_bookingService.GetRidersList(booking));
+        }
+
+        // POST: api/BookRide
+        [HttpPost]
+        [ActionName("createbooking")]
+        public IActionResult CreateBookig([FromBody]PassengerRide booking, string rideId)
+        {
+            if (booking == null)
+            {
+                return BadRequest();
+            }
+            _rideService.BookRide(booking, rideId);
+            return Ok();
         }
 
         // PUT: api/BookedRide/5

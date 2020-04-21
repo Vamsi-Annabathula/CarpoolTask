@@ -12,7 +12,7 @@ namespace CarPool.Domain.Entities
 
         [Key]
         [ForeignKey("RideId")]
-        public Guid RideId { get; set; }
+        public string RideId { get; set; }
         public RideProvider Ride { get; set; }
     }
 }

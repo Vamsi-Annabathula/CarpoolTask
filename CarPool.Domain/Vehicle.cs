@@ -9,14 +9,14 @@ namespace CarPool.Domain.Entities
     public class Vehicle
     {
         [Key]
-        public Guid Id { get; set; }
+        public string Id { get; set; }
         public string VIN { get; set; }
         public VehicleType Type { get; set; }
         public int Capacity { get; set; }
         public bool IsRemoved { get; set; }
 
-        public Guid UserId { get; set; }
+        public string UserId { get; set; }
         public User User { get; set; }
-        public RideProvider Ride { get; set; }
+        public ICollection<RideProvider> Rides { get; set; }
     }
 }

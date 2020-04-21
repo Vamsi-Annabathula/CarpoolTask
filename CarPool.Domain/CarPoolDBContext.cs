@@ -27,10 +27,7 @@ namespace CarPool.Persistence
         public DbSet<Rating> Ratings { get; set; }
         public DbSet<RideProvider> Rides { get; set; }
         public DbSet<PassengerRide> PassengerRides { get; set; }
-        public DbSet<RideRequest> RideRequests { get; set; }
-        public DbSet<RideRoute> Routes { get; set; }
-        public DbSet<UserAuthentication> UserAuth { get; set; }
-        public DbSet<User> User { get; set; }
+        public DbSet<User> Users{ get; set; }
         public DbSet<Vehicle> Vehicles { get; set; }
 
         //protected override void OnConfiguring(DbContextOptionsBuilder options)

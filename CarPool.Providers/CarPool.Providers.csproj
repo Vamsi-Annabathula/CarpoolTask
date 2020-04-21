@@ -5,6 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="9.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\CarPool.Concerns\CarPool.Concerns.csproj" />
     <ProjectReference Include="..\CarPool.Contract\CarPool.Contract.csproj" />
     <ProjectReference Include="..\CarPool.Domain\CarPool.Domain.csproj" />

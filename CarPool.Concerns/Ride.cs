@@ -1,15 +1,16 @@
 ﻿using Application.CarPool.Concern;
+using CarPool.Domain.Enum;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace CarPool.Concerns
 {
-    public class RiderRide
+    public class Ride
     {
-        public RiderRide()
+        public Ride()
         {
-            ViaPoints = new HashSet<string>();
+
         }
         public string Id { get; set; }
 
@@ -23,10 +24,18 @@ namespace CarPool.Concerns
             
         public DateTime Date { get; set; }
 
-        public Guid UserId { get; set; }
+        public Decimal Distance { get; set; }
 
-        public Vehicle Vehicle { get; set; }
+        public Decimal RaidFarePerKM { get; set; }
 
-        public IEnumerable<string> ViaPoints { get; set; }
+        public int AvailableCapacity { get; set; }
+
+        public string UserId { get; set; }
+
+        public string VehicleId { get; set; }
+
+        public string ViaPoints { get; set; }
+
+        public RideStatusType Status{ get; set; }
     }
 }

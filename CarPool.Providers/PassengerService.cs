@@ -1,5 +1,5 @@
 ﻿using CarPool.IServices;
-using Application.CarPool.Concern;
+using CC = Application.CarPool.Concern;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,8 +7,11 @@ using System.Text;
 using CarPool.Domain.Entities;
 using CarPool.Persistence;
 using Microsoft.EntityFrameworkCore;
+using CarPool.Concerns;
+using Newtonsoft.Json;
+using CarPool.Providers;
 
-namespace CarPool.Services
+namespace CarPool.Api
 {
     public class PassengerService: IPassengerServie
     {
@@ -18,24 +21,27 @@ namespace CarPool.Services
         {
             _context = context;
         }
-        public IQueryable<RideProvider> GetRidersList(Application.CarPool.Concern.PassengerRide bookedRide)
+        
+        public List<Ride> GetRidersList(CC.PassengerRide booking)
         {
-                var list = _context.Rides.FromSqlRaw("Select * from Rides");
-                    //.Include(s => s.Route)
-                    //.Where(s => s.Route.Any(s => s.ViaPoints).ToString() == bookedRide.Boarding &&
-                    //s.Route.ViaPoints.ToString() == bookedRide.Destination);
-                return list;
+            int count = 0;
+            List<RideProvider> rides = new List<RideProvider>();
+            foreach (var ride in _context.Rides)
+            {
+                count++;
+                var viaPoints = JsonConvert.DeserializeObject<List<ViaPoint>>(ride.ViaPoints);
+
+                if (viaPoints.IndexOf(viaPoints.FirstOrDefault(a => a.Area.Equals(booking.Destination))) >
+                    viaPoints.IndexOf(viaPoints.FirstOrDefault(a => a.Area.Equals(booking.Boarding)))
+                    && ride.StartTime == booking.StartTime && ride.AvailableCapacity > 0)
+                {
+                    rides.Add(ride);
+                }
+            }
+
+            return Mapper.Map<List<RideProvider>, List<Ride>>(rides);
         }
 
-        public void RequestRider(Guid passengerRideId, Guid offeredRideId)
-        {
-                _context.RideRequests.Add(new RideRequest
-                {
-                    OfferedRideId = offeredRideId,
-                    PassengerRideId = passengerRideId
-                });
-                _context.SaveChanges();
-        }
         //public void MakePayment(BookedRide bookedRide, PostedRide postedRide)
         //{
         //    postedRide.Payments.Add(new Payment
