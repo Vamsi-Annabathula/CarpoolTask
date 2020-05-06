@@ -1,0 +1,5 @@
+/* Provide sufficient contrast against white background */
+body{
+  min-height: 100%;
+	width: 100%;
+}

@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29519.87
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarPool.Api", "CarPool.Api\CarPool.Api.csproj", "{E03407F6-B62C-47F1-A3F8-660783B92CCB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarPool.Api", "CarPool.Api\CarPool.Api.csproj", "{E03407F6-B62C-47F1-A3F8-660783B92CCB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarPool.Concerns", "CarPool.Concerns\CarPool.Concerns.csproj", "{A240FC12-3700-4664-9805-95AC483209DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarPool.Concerns", "CarPool.Concerns\CarPool.Concerns.csproj", "{A240FC12-3700-4664-9805-95AC483209DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarPool.Domain", "CarPool.Domain\CarPool.Domain.csproj", "{66EAE636-10BC-4720-9A2E-65EB131C2E7D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarPool.Domain", "CarPool.Domain\CarPool.Domain.csproj", "{66EAE636-10BC-4720-9A2E-65EB131C2E7D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarPool.Providers", "CarPool.Providers\CarPool.Providers.csproj", "{9F39ABC7-D9A3-4316-8570-2FD59B473401}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarPool.Providers", "CarPool.Providers\CarPool.Providers.csproj", "{9F39ABC7-D9A3-4316-8570-2FD59B473401}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarPool.Contract", "CarPool.Contract\CarPool.Contract.csproj", "{0168CCF2-693D-44AA-8924-9DD4A373C0C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarPool.Contract", "CarPool.Contract\CarPool.Contract.csproj", "{0168CCF2-693D-44AA-8924-9DD4A373C0C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarPool.Web", "CarPool.Web\CarPool.Web.csproj", "{11269648-168C-45C7-BF2F-71BB1AAEDE03}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{0168CCF2-693D-44AA-8924-9DD4A373C0C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0168CCF2-693D-44AA-8924-9DD4A373C0C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0168CCF2-693D-44AA-8924-9DD4A373C0C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11269648-168C-45C7-BF2F-71BB1AAEDE03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11269648-168C-45C7-BF2F-71BB1AAEDE03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11269648-168C-45C7-BF2F-71BB1AAEDE03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11269648-168C-45C7-BF2F-71BB1AAEDE03}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

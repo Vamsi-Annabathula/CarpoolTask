@@ -1,0 +1,61 @@
+.container{
+    max-width: 100%;
+    background-image: url(../../assests/Images/UI1.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    .header-row{
+        .logo-img{
+            margin-top: 1.5vw;
+            margin-left: .5vw
+        }
+    }
+    
+    .name{
+        font-family: Arial, Helvetica, sans-serif;
+        letter-spacing: .01vw;
+        margin-top: 1.8vw;
+        font-weight: 600;
+        font-size: 1.5vw;
+    }
+    .welcome-msg{
+        font-family: cursive;
+        letter-spacing: .1vw;
+        font-size: 2vw;
+        margin-top: 5vw;
+        font-weight: 900;
+    }
+    .avatar{
+        vertical-align: middle;
+        width: 3vw;
+        height: 3vw;
+        border-radius: 50%;
+    }
+    .welcome-card{
+        border-radius: 1vw;
+        p{
+            margin-bottom: 4rem;
+            margin-top: 3vw;
+            font-size: 2vw;
+            padding-left: 5.5vw;
+            font-weight: 600;
+        }
+    }
+    .last-col{
+        margin-bottom: 25vw;
+    }
+    .BGImageMain{
+        width: 100%;
+        max-height: 30vw;
+    }
+    a{
+        color: white;
+        font-size: x-large;
+        font-weight: 600;
+        text-decoration: none;
+        &hover{
+            color: #9319ff;
+        }
+    }
+   
+    
+}
