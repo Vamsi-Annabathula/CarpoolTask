@@ -1,0 +1,403 @@
+@import '../../App.sass'
+
+.viewcard-Container
+
+    .offercard-Container
+        border-radius: 10px
+        background: #f6f6f6
+        box-shadow: rgba(0, 0, 0, 0.133) 0px 0px 10px 0px, rgba(0, 0, 0, 0.11) 5px 5px 5px 0px
+        margin: auto
+        width: 90vw
+        max-width: 800px
+        padding: 10px 0
+        text-align: center
+        .offercard-Header
+            font-size: 25px
+            font-weight: 700
+            color: #911CF9
+            border-bottom-style: groove
+            border-width: thick
+            padding: 10px
+            width: 85vw
+            max-width: 750px
+            margin: auto
+        .ride-Timer
+            display: flex
+            width: 30vw
+            flex-flow: wrap
+            margin: 10px auto
+            .timer
+                margin: auto
+            .start-Ride
+                border: none
+                outline: none
+                border-radius: 25px
+                color: white
+                background: $violet-color
+                padding: 10px
+                margin: auto
+                display: block
+                width: 100px
+        .basic-Details
+            padding: 10px
+            border-radius: 10px
+            width: 80vw
+            max-width: 700px
+            margin: 10px auto
+            background: #f6f6f6
+            box-shadow: rgba(0, 0, 0, 0.133) 0px 0px 10px 0px, rgba(0, 0, 0, 0.11) 5px 5px 5px 0px
+            .container-Header
+                font-size: 20px
+                width: 80vw
+                max-width: 150px
+                margin: 0 auto
+                padding: 5px
+                border: none
+                border-bottom: 5px groove
+            .editicon-Button
+                border: none
+                background: transparent
+                outline: none
+                max-width: 30px
+            .colon
+                font-weight: 600
+                max-width: 77px
+                width: 2px
+            .field-Label,.colon,.editicon-Button
+                flex: auto
+                margin: auto
+            .field-Label
+                max-width: 130px
+                width: 100px
+                overflow: hidden
+                text-overflow: ellipsis
+                white-space: nowrap
+                outline: none
+                color: rgba(0, 0, 0, 0.7)
+                font-weight: 700
+            .places-Container
+                display: flex
+                flex-flow: wrap
+                .from-Container,.to-Container
+                    margin: 10px
+                    display: flex
+                    .from-Text,.to-Text
+                        overflow: hidden
+                        text-overflow: ellipsis
+                        width: 100px
+                        white-space: nowrap
+                        outline: none
+
+                .from-Container,.to-Container
+                    flex: auto
+            .dateTime-Container
+                display: flex
+                flex-flow: wrap
+                .date-Container,.time-Container
+                    flex: auto
+                    display: flex
+                    margin: 10px
+                    .date-Text,.time-Text
+                        overflow: hidden
+                        text-overflow: ellipsis
+                        width: 100px
+                        white-space: nowrap
+                        outline: none
+                .time-Popup
+                    position: absolute
+                    top: 0
+                    left: 0
+                    right: 0
+                    bottom: 0
+                    background: rgba(0, 0, 0, 0.5)
+                    height: 100%
+                    width: 100%
+                    .edittime-Container
+                        background: white
+                        border-top: 3px solid $yellow-color
+                        width: 50vw
+                        margin: 30vh auto
+                        padding: 10px
+                        max-width: 350px
+                        .timepopup-Header
+                            width: 30vw
+                            max-width: 300px
+                            border-bottom: 2px solid rgba(0, 0, 0, 0.5)
+                            display: flex
+                            margin: auto
+                            padding: 10px
+                            text-align: left
+                            .popupheader
+                                flex: auto
+                        .timings-Group
+                            display: flex
+                            flex-flow: wrap
+                            margin: 15px
+                            .time-Button
+                                border: 1px solid #911CF9
+                                outline: none
+                                background: transparent
+                                border-radius: 25px
+                                flex: 1 0 100px
+                                margin: 5px
+                                padding: 5px
+                                color: darkslategrey
+                            .selected 
+                                background: $violet-color
+                                color: white
+                        .ok-Button
+                            border: none
+                            outline: none
+                            border-radius: 25px
+                            background: $yellow-color
+                            color: white
+                            margin: auto
+                            width: 100px
+
+            .costAvailability-Container
+                display: flex
+                flex-flow: wrap
+                .cost-Container,.availability-Container
+                    display: flex
+                    flex: auto
+                    margin: 10px
+                    width: 100vw
+                    .cost-Text,.availability-Text
+                        overflow: hidden
+                        text-overflow: ellipsis
+                        width: 100px
+                        white-space: nowrap
+                        outline: none
+            .viapoints-Container
+                display: flex
+                flex-flow: wrap
+                .viapoint
+                    display: flex
+                    width: 100vw
+                    max-width: 650px
+                    height: fit-content
+                    margin: 10px
+                    .viapoint-Text
+                        overflow: hidden
+                        text-overflow: ellipsis
+                        width: 100px
+                        white-space: nowrap
+                        outline: none
+            input
+                margin: 2px
+                border: none
+                background: transparent
+                border-bottom: 2px groove
+
+            .status-Container
+                display: inline-block
+                width: 100%
+            .status-Text
+                border-radius: 10px
+                padding: 5px
+                float: right
+                width: fit-content
+                text-align: center
+                color: white
+            .bookings-Accepting
+                background: green
+            .bookings-Closed
+                background: orange
+            .deleted
+                background: red
+    
+    .riderequests-Container
+        margin: 10px
+        .riderequests-Header
+            font-size: 20px
+            padding: 10px
+            border-bottom: 5px groove
+            width: 200px
+            margin: auto
+        .riderequests
+            display: flex
+            flex-flow: wrap
+            overflow-y: auto
+            .rideinfo-Container
+                width: 75vw
+                max-width: 300px
+                margin: 20px auto
+                padding: 20px
+                border-radius: 10px
+                background: #f6f6f6
+                box-shadow: rgba(0, 0, 0, 0.133) 0px 0px 10px 0px, rgba(0, 0, 0, 0.11) 5px 5px 5px 0px
+                .warning-Container
+                    position: absolute
+                    top: 0
+                    right: 0
+                    bottom: 0
+                    left: 0
+                    background: $transparentblack-color
+                .warning-Card
+                    background: white
+                    width: 50vw
+                    margin: 30vh auto
+                    padding: 10px
+                    max-width: 350px
+                    border-top: 5px solid $violet-color
+                    .warning-Text
+                        font-weight: 600
+                        margin: 10px
+                    .warning-Footer
+                        text-align: center
+                        .confirm,.cancel
+                            border: none
+                            outline: none
+                            border-radius: 25px
+                            color: white
+                            width: 100px
+                            margin: 10px
+                        .confirm
+                            background: $yellow-color
+                        .cancel
+                            background: $violet-color
+                .rideinfocontainer-Body
+                    .boardingpoint-Container,.destinationpoint-Container,.name-Container,.phone-Container
+                        display: flex
+                        .field-Label,.colon,.field-Value
+                            flex: auto
+                        .field-Label,.field-Value
+                            width: 130px
+                            overflow: hidden
+                            text-overflow: ellipsis
+                            white-space: nowrap
+                            outline: none
+                .ridecontainer-Footer
+                    padding: 10px auto
+                    .accept-Button,.reject-Button
+                        border: none
+                        outline: none
+                        border-radius: 25px
+                        color: white
+                        padding: 5px
+                        margin: 5px
+                        width: 80px
+                    .accept-Button
+                        background: $yellow-color
+                    .reject-Button
+                        background: $violet-color
+                .ridecontainer-Status
+                    .ride-Accepted,.request-Rejected,.ride-Cancelled
+                        width: 200px
+                        padding: 5px
+                        margin: 5px auto
+                        border-radius: 20px
+                        color: white
+                    .ride-Accepted
+                        background: green
+                    .request-Rejected
+                        background: red
+                    .ride-Cancelled
+                        background: orange
+        .nooffer-Rides
+            margin: auto    
+    
+    .ownerpart-Footer
+        margin: 10px
+        .save-Button,.deleteoffer-Button,.activateoffer-Button,.closebooking-Button,.openbooking-Button
+            border: none
+            outline: none
+            border-radius: 25px
+            color: white
+            padding: 5px
+            margin: 5px
+            width: 130px
+        .save-Button
+            background: $yellow-color
+        .deleteoffer-Button
+            background: red
+        .closebooking-Button,.openbooking-Button
+            background: $violet-color
+        .activateoffer-Button
+            background: green
+    
+    .userpart-Body
+        display: flex
+        flex-flow: wrap
+        .vehicleinfo-Container,.ownerinfo-Container
+            border-radius: 10px
+            background: #f6f6f6
+            width: 50vw
+            max-width: 300px
+            margin: 10px auto
+            padding: 10px
+            box-shadow: rgba(0, 0, 0, 0.133) 0px 0px 10px 0px, rgba(0, 0, 0, 0.11) 5px 5px 5px 0px
+            .container-Header
+                font-size: 20px
+                width: 80vw
+                max-width: 150px
+                margin: 0 auto
+                padding: 5px
+                border: none
+                border-bottom: 5px groove
+        .vehicle-Container,.ownercontainer-Details
+            flex-flow: wrap
+        .vehicle-Name,.vehicle-No,.owner-Name,.owner-Phone
+            margin: 10px
+        .vehicle-Container,.ownercontainer-Details,.vehicle-Name,.vehicle-No,.owner-Name,.owner-Phone
+            display: flex
+            flex: auto
+            .field-Label
+                width: 120px
+                flex: auto
+                color: rgba(0, 0, 0, 0.7)
+                font-weight: 700
+            .colon
+                flex: auto
+                font-weight: 600
+            .field-Value
+                overflow: hidden
+                text-overflow: ellipsis
+                white-space: nowrap
+                outline: none
+                width: 100px
+    
+    .userpart-Footer
+        .request-Ride,.search-Nav
+            border: none
+            outline: none
+            border-radius: 25px
+            width: 130px
+            margin: 10px
+            color: white
+            padding: 5px
+        .search-Nav
+            background: $violet-color
+        .request-Ride
+            background: $yellow-color
+    
+    .deletewarning-Container
+        position: absolute
+        top: 0
+        right: 0
+        bottom: 0
+        left: 0
+        background: $transparentblack-color
+        .deletewarning-Card
+            background: white
+            width: 50vw
+            margin: 30vh auto
+            padding: 10px
+            max-width: 350px
+            border-top: 5px solid red
+            .deletewarning-Text
+                font-weight: 600
+                margin: 10px
+            .deletewarning-Footer
+                text-align: center
+                .delete-Confirm,.delete-Cancel
+                    border: none
+                    outline: none
+                    border-radius: 25px
+                    color: white
+                    width: 80px
+                    margin: 10px
+                .delete-Confirm
+                    background: red
+                .delete-Cancel
+                    background: green

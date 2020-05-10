@@ -1,0 +1,197 @@
+@import '../../App.sass'
+
+.book-Ride
+    display: flex
+    flex-wrap: wrap
+    padding: 0 20px
+    .book-Ride-Card
+        height: fit-content
+        padding: 20px
+        margin: 20px 0
+        flex: 1 0 1px
+        min-width: 25vw
+        border-radius: 10px
+        background: $dirtywhite-color     
+        box-shadow: rgba(0, 0, 0, 0.133) 0px 5px 50px 0px, rgba(0, 0, 0, 0.11) 0px 0.3px 50px 0px
+        .card-Header
+            position: relative
+            display: flex
+            .card-Title
+                font-weight: 500
+                font-size: 30px
+                width: 80vw
+            .bookride-Toggle
+                padding: 15px 10px 10px 10px
+                margin: unset
+                button
+                    background: $violet-color
+        .card-Subtitle
+            font-size: 14px
+            font-weight: 600
+            opacity: 0.8
+            color: grey
+            letter-spacing: 0.5px
+            p
+                margin: unset
+        .error-Text
+            margin: auto
+            color: red
+        .search
+            border: none
+            outline: none
+            border-radius: 20px
+            color: white
+            font-weight: 700
+            background: $yellow-color
+            margin: 15px auto
+            padding: 5px 15px
+
+    .search-Card
+        margin: auto
+
+    .search-Box
+        display: flex
+        flex-direction: column
+        position: relative
+        margin-top: unset
+        .search-Design
+            display: flex
+            flex-direction: column
+            position: absolute
+            right: 0
+            top: 5px
+            .source-Icon,.destination-Icon
+                height: 25px
+                font-size: 20px
+                color: $violet-color
+            i
+                color: $lightgrey-color
+                height: 17px
+                font-size: 15px
+                margin: auto
+
+        .source,.destination,.date
+            display: block
+            position: relative
+            margin: 5px 0
+            font-weight: 500
+            .floating-Label
+                padding: 25px 0 0 0
+                border: none
+                outline: none
+                background: $dirtywhite-color
+                border-bottom: 1.5px solid grey
+            label
+                position: absolute
+                left: 0px
+                top: 20px
+                margin: 0
+                color: grey
+                opacity: 0.8
+                z-index: 100
+                border: none
+                border-radius: 5px
+                transition: all 150ms ease-in
+            .field-active
+                font-size: .8em
+                color: #676767
+                border: none
+                border-radius: 10px
+                transform: translateY(-15px)
+            .place-Search
+                position: absolute
+                top: 55px
+                z-index: 200
+                background: $dirtywhite-color
+                .place
+                    background: $dirtywhite-color
+                    width: 24vw
+                    font-size: 15px
+                    color: $grey-color
+                    opacity: 0.8
+                .place:hover
+                    background: grey
+                    color: white
+        .time
+            display: block
+            font-weight: 500
+            margin: 10px 0 0 0
+            label
+                font-size: 15px
+                color: grey
+            .timings-Group
+                display: flex
+                flex-wrap: wrap
+                .time-Button
+                    border: 1px solid #911CF9
+                    outline: none
+                    background: transparent
+                    border-radius: 25px
+                    flex: 1 0 100px
+                    margin: 5px
+                    padding: 5px
+                    color: darkslategrey
+                .selected 
+                    background: $violet-color
+                    color: white
+
+    .matches,.nomatches-Found
+        flex: 1 0 1px
+        margin: 20px auto
+        display: flex
+        flex-direction: column
+        max-width: 800px
+        width: 80vw
+        .matches-Header
+            font-size: 30px
+            font-weight: 700
+            color: $violet-color
+            margin: auto
+        .offers
+            // flex: 1 0 1px
+            // margin: 50px
+            // padding: 50px
+            display: flex
+            flex-flow: wrap
+            justify-content: center
+        .matches-Button
+            border: none
+            outline: none
+            color: $violet-color
+            background: transparent
+            font-weight: 700
+            margin: 20px
+            text-align: right
+    .nomatches-Found
+        font-size: 30px
+        text-align: center
+        justify-content: center
+        margin: auto
+        font-weight: 700
+        color: $violet-color
+
+    .bookride-Background
+        position: absolute
+        bottom: 0
+        right: 0
+        left: 0
+        z-index: -1
+        width: 100%
+
+.bookridewarning-Container
+    text-align: center
+    display: inline-block
+    width: 100vw
+    background: wheat
+    padding: 5px
+    .bookridewarning-Text
+        font-weight: 600
+        margin: 5px
+    .nav-Button
+        border: none
+        outline: none
+        padding: 5px
+        border-radius: 25px
+        width: 100px
+        color: white
+        background: $violet-color

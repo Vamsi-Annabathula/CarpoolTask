@@ -1,0 +1,43 @@
+@import '../../App.sass'
+
+.user-Home
+    height: 90vh
+    position: relative
+    .userhome-Container
+        margin: auto
+        display: flex
+        flex-direction: column
+        .welcome-User
+            font-weight: 800
+            font-size: 30px
+            margin: 20px auto
+            flex: 1 0 1px
+            text-transform: capitalize
+        .user-Home-Buttons
+            width: 100vw
+            text-align: center
+            flex-flow: wrap
+            display: flex
+            align-content: center
+            justify-content: center
+            .bookride-Button,.offerride-Button
+                text-align: center
+                border: none
+                outline: none
+                font-size: 30px
+                margin: 20px
+                padding: 60px
+                color: white
+                border-radius: 10px
+                font-weight: 400
+            .bookride-Button
+                background: $violet-color
+            .offerride-Button
+                background: $yellow-color
+    .background-Image
+        position: absolute
+        bottom: 0
+        width: 100vw
+        z-index: -1
+        img
+            width: 100vw

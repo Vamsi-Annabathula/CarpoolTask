@@ -1,0 +1,94 @@
+@import '../../App.sass'
+
+.ride-Type
+    cursor: default!important    
+
+.rideCard-Container
+    border-radius: 10px
+    background: #f6f6f6
+    box-shadow: rgba(0, 0, 0, 0.133) 0px 0px 10px 0px, rgba(0, 0, 0, 0.11) 5px 5px 5px 0px
+    position: relative
+    margin: 20px
+    height: fit-content
+    cursor: pointer
+    width: 90vw
+    max-width: 400px
+    .rideCard-Pic
+        height: 55px
+        width: 55px
+        border-radius: 50%
+        position: absolute
+        top: 20px
+        right: 20px
+    .rideCard-Text-Container
+        display: flex
+        flex-direction: column
+        padding: 15px
+        .field-Label
+            color: grey
+            font-weight: 500
+            margin: unset
+            overflow: hidden
+            text-overflow: ellipsis
+            width: 120px
+            white-space: nowrap
+        .card-Title
+            font-weight: 700
+            font-size: 25px
+            text-transform: capitalize
+            margin: 0 10px
+            overflow: hidden
+            text-overflow: ellipsis
+            width: 120px
+            white-space: nowrap
+        .places-Container
+            display: flex
+            .from-Container,.to-Container
+                margin: 10px
+                .from-Text,.to-Text
+                    overflow: hidden
+                    text-overflow: ellipsis
+                    width: 100px
+                    white-space: nowrap
+            .from-Container,.from-Text,.card-Design,.to-Container
+                flex: 1 0 50%
+                .from-Field,.card-Design
+                    display: flex
+                    .source-Icon,.destination-Icon
+                        color: $violet-color
+                    i
+                        flex: 1 0 1px
+                        color: #e0e0e0
+                        font-size: 14px
+                        margin: auto
+        .dateTime-Container
+            display: flex
+            .date-Container,.time-Container
+                flex: 1 0 50%
+                margin: 10px
+        .costAvailability-Container
+            display: flex
+            .cost-Container,.availability-Container
+                flex: 1 0 50%
+                margin: 10px
+        .status-Container
+            text-align: right
+            .status-Text
+                border-radius: 10px
+                padding: 5px
+                float: right
+                width: fit-content
+                text-align: center
+                color: white
+        .bookings-Accepting,.ride-Accepted
+            background: green
+        .bookings-Closed
+            background: orange
+        .deleted,.offer-Deleted
+            background: red
+        .request-Sent
+            background: $yellow-color
+                
+
+
+

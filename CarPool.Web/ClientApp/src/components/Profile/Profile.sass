@@ -1,0 +1,206 @@
+@import '../../App.sass'
+
+.userprofile-Container
+    width: 75vw
+    margin: auto
+    text-align: center
+    height: fit-content
+    box-shadow: rgba(0, 0, 0, 0.133) 0px 5px 50px 0px, rgba(0, 0, 0, 0.11) 0px 0.3px 50px 0px
+    padding: 20px
+    .error-Text
+        color: red
+    .profile-Title
+        font-size: 25px
+        font-weight: 700
+        color: $violet-color
+        border-bottom-style: groove
+        border-width: thick
+        padding: 10px
+    .userdetails-Container
+        display: flex 
+        flex-flow: wrap
+        width: 60vw
+        max-width: 300px
+        margin: auto
+        .user-Profilepic
+            height: 200px
+            width: 200px
+            border-radius: 50%
+            margin: auto
+        .user-Details
+            flex: 1 0 1px
+            padding: 5px
+            margin: auto
+            width: 50vw
+            .name-Container,.email-Container,.phone-Container,.rating-Container
+                display: flex
+                margin: 20px auto
+                .field-Label
+                    color: grey
+                    flex: 1 0 30%
+                    margin: auto
+                    max-width: 200px
+                .colon
+                    margin: auto
+                .field-Value
+                    color: darkslategrey
+                .name-Text,.email-Text,.phone-Text,.rating-Text
+                    flex: 1 0 60%
+                    max-width: 300px
+                    text-overflow: ellipsis
+                    overflow: hidden
+                    margin: auto
+                    white-space: nowrap
+        .editicon-Button
+            border: none
+            outline: none
+            background: transparent
+        .name-Input,.email-Input,.phone-Input
+            border: none
+            outline: none
+            border-bottom: groove
+            width: 35vw
+            max-width: 170px
+            margin: auto
+    .addvehicle-Container
+        position: absolute
+        top: 0
+        bottom: 0
+        right: 0
+        left: 0
+        background: $transparentblack-color
+        .vehicle-Card
+            margin: 30vh auto!important
+            width: 90vw!important
+            padding: 30px
+            max-width: 500px!important
+            background: white!important
+            position: relative
+            .vehiclecard-Title
+                display: flex
+                border-bottom: groove
+                font-weight: 600
+                .vehiclecard-TitleText
+                    font-size: 20px 
+                    padding: 10px
+                    text-align: left
+                    flex: auto
+                .close-Icon
+                    border: none
+                    outline: none
+                    background: transparent
+                    margin: auto
+            .field-Label
+                margin: auto!important
+            .field-Value
+                margin: 10px!important 
+                width: 100px  
+                border-bottom: groove!important
+                outline: none!important
+            .add-Button
+                border: none
+                outline: none
+                border-radius: 25px
+                background: $violet-color
+                color: white
+                margin: 10px auto
+                width: 100px
+                padding: 5px
+    .save-Profile
+        border-radius: 25px
+        padding: 10px
+        color: white
+        background: $yellow-color
+        border: none
+        outline: none
+        margin: 20px
+        width: 100px
+
+
+    .vehicles-Container,.addvehicle-Container
+        .vehiclecontainer-Title
+            font-weight: 600
+            margin: 10px auto
+            font-size: 20px
+        .vehicle-Card
+            width: 60vw
+            max-width: 400px
+            padding: 10px
+            margin: auto
+            box-shadow: rgba(0, 0, 0, 0.133) 0px 5px 50px 0px, rgba(0, 0, 0, 0.11) 0px 0.3px 50px 0px
+            .deletewarning-Container
+                position: absolute
+                top: 0
+                right: 0
+                bottom: 0
+                left: 0
+                background: $transparentblack-color
+                .deletewarning-Card
+                    background: white
+                    width: 50vw
+                    margin: 30vh auto
+                    padding: 10px
+                    max-width: 350px
+                    border-top: 5px solid $violet-color
+                    .deletewarning-Text
+                        font-weight: 600
+                        margin: 10px
+                    .deletewarning-Footer
+                        text-align: center
+                        .delete-Confirm,.delete-Cancel
+                            border: none
+                            outline: none
+                            border-radius: 25px
+                            color: white
+                            width: 80px
+                            margin: 10px
+                        .delete-Confirm
+                            background: $yellow-color
+                        .delete-Cancel
+                            background: $violet-color
+        .vehicle-Title,.vehicle-Type,.vehicle-Number,.vehicle-Status,.vehicle-Seatingcount
+            display: flex
+            margin: 5px
+            .field-Label
+                color: grey
+                flex: 1 0 40%
+                margin: 5px
+            .colon
+                margin: auto    
+            .field-Value
+                color: darkslategrey
+                flex: 1 0 30%
+                margin: 5px
+                border: none
+                text-overflow: ellipsis
+                overflow: hidden
+                white-space: nowrap
+            .status-Label
+                flex: 1 0 30%
+        .vehicle-Footer
+            display: flex
+            justify-content: center
+            .edit-Button,.delete-Button
+                border: none
+                outline: none
+                color: white
+                margin: 10px
+                max-width: 80px
+                width: 80px
+                flex: auto
+                border-radius: 25px
+            .edit-Button
+                background: $yellow-color
+            .delete-Button
+                background: $violet-color
+
+    .novehicles-Container
+        .novehicles-Text
+            margin: 10px
+        .add-Vehicle
+            border-radius: 25px
+            outline: none
+            background: $yellow-color
+            border: none
+            color: white
+            padding: 10px

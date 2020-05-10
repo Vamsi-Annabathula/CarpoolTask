@@ -1,0 +1,39 @@
+@import '../../App.sass'
+
+.ridesHistory-Container
+    .rideHistory-Background
+        position: absolute
+        bottom: 0
+        right: 0
+        left: 0
+        z-index: -1
+        width: 100%
+    .bookedrides-Text
+        border-radius: 10px
+        color: $yellow-color
+        display: block
+        width: 300px
+        text-align: center
+        margin: auto
+        padding: 10px
+        font-size: 40px
+        font-weight: 700
+    .bookedrides-Container
+        display: flex
+        flex-flow: wrap
+        justify-content: center
+    .norides-Container
+        .norides-Text
+            font-size: 20px
+            margin: 10px
+        .bookride-Navbutton
+            border: none
+            outline: none
+            border-radius: 25px
+            color: white
+            background: $violet-color
+            padding: 10px
+            width: 150px
+            display: block
+            height: fit-content
+            margin: auto
