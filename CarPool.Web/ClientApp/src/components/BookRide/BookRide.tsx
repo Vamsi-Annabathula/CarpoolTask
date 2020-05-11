@@ -1,9 +1,9 @@
 import { useHistory } from "react-router";
 import { Card } from "@uifabric/react-cards";
 import { Toggle, Icon } from "office-ui-fabric-react";
-import { UserContext } from "../../contexts/UserContext";
+import { UserContext } from "../../Providers/UserProvider";
 import { searchOffers } from "../../Services/OfferCalls";
-import { OfferContext } from "../../contexts/OfferContext";
+import { OfferContext } from "../../Providers/OfferProvider";
 import "./BookRide.sass";
 import Loader from "../Loader/Loader";
 import RideCard from "../RideCard/RideCard";

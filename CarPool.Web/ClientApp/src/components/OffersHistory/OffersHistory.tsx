@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, Fragment } from "react";
 import RideCard from "../RideCard/RideCard";
-import { OfferContext } from "../../contexts/OfferContext";
+import { OfferContext } from "../../Providers/OfferProvider";
 import { useHistory } from "react-router";
 import { fetchUserOffers } from "../../Services/OfferCalls";
-import { UserContext } from "../../contexts/UserContext";
+import { UserContext } from "../../Providers/UserProvider";
 import backgroundImage from "../../Images/applicationbg.png";
 import "./OffersHistory.sass";
 import ResponsePopup from "../ResponsePopup/ResponsePopup";

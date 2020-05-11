@@ -8,8 +8,8 @@ import BookRide from "../BookRide/BookRide";
 import OfferRide from "../OfferRide/OfferRide";
 import OffersHistory from "../OffersHistory/OffersHistory";
 import RidesHistory from "../RidesHistory/RidesHistory";
-import OfferContextProvider from "../../contexts/OfferContext";
-import RideContextProvider from "../../contexts/RideContext";
+import OfferContextProvider from "../../Providers/OfferProvider";
+import RideContextProvider from "../../Providers/RideProvider";
 import Profile from "../Profile/Profile";
 import ViewCard from "../ViewCard/ViewCard";
 import "office-ui-fabric-react/dist/css/fabric.css";
@@ -31,9 +31,6 @@ const Layout = () => {
             <Route exact path="/rideshistory" component={RidesHistory} />
             <Route exact path="/profile" component={Profile} />
             <Route exact path="/viewoffer/:id" component={ViewCard} />
-            {/* <Route exact path="/viewride/:id">
-              <ViewCard type="ride" />
-            </Route> */}
           </RideContextProvider>
         </OfferContextProvider>
       </div>

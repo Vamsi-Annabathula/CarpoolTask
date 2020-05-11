@@ -1,7 +1,7 @@
 import React, { useState, useContext, Fragment } from "react";
 import { Icon } from "office-ui-fabric-react";
 import { useHistory, Redirect } from "react-router-dom";
-import { UserContext } from "../../contexts/UserContext";
+import { UserContext } from "../../Providers/UserProvider";
 import { loginAPI } from "../../Services/UserCalls";
 import homebg from "../../Images/homebg.png";
 import FormBg from "../../Images/formbg.png";

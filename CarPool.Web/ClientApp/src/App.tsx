@@ -3,7 +3,7 @@ import * as React from "react";
 import "./custom.css";
 import Layout from "./components/Layout/Layout";
 import { initializeIcons } from "office-ui-fabric-react";
-import UserContextProvider from "./contexts/UserContext";
+import UserContextProvider from "./Providers/UserProvider";
 
 initializeIcons();
 const App = () => {

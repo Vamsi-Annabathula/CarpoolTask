@@ -1,6 +1,6 @@
 import React, { useContext, useState, Fragment } from "react";
 import { useHistory } from "react-router";
-import { UserContext } from "../../contexts/UserContext";
+import { UserContext } from "../../Providers/UserProvider";
 import userProfile from "../../Images/user-profile.png";
 import logo from "../../Images/logo.png";
 import { LOGOUT } from "../../ActionTypes/UserActions";
@@ -31,7 +31,13 @@ const Header = () => {
           }
         />
       </div>
-      <div className="headernav-Container">
+      
+    </div>
+  );
+};
+
+export default Header;
+{/* <div className="headernav-Container">
         {userState.isAuthenticated ? (
           <Fragment>
             <button
@@ -138,9 +144,4 @@ const Header = () => {
             </button>
           </div>
         )}
-      </div>
-    </div>
-  );
-};
-
-export default Header;
+      </div> */}

@@ -4,7 +4,7 @@ import './Footer.sass';
 const Footer = () => {
   return (
     <div className="Footer">
-      copyrights reservered by gali bhaskar
+      copyrights reservered by Vamsea
     </div>
   );
 };

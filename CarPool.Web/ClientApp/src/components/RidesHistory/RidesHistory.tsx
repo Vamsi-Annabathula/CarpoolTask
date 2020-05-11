@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, Fragment } from "react";
-import { RideContext } from "../../contexts/RideContext";
+import { RideContext } from "../../Providers/RideProvider";
 import RideCard from "../RideCard/RideCard";
-import { UserContext } from "../../contexts/UserContext";
+import { UserContext } from "../../Providers/UserProvider";
 import { fetchUserRides } from "../../Services/RideCalls";
 import { useHistory } from "react-router";
 import backgroundImage from "../../Images/applicationbg.png";

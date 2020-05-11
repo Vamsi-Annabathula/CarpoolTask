@@ -1,5 +1,5 @@
 import React, { useContext, useState, Fragment, useEffect } from "react";
-import { UserContext } from "../../contexts/UserContext";
+import { UserContext } from "../../Providers/UserProvider";
 import { Icon } from "office-ui-fabric-react";
 import defaultProfile from "../../Images/user-profile.png";
 import "./Profile.sass";

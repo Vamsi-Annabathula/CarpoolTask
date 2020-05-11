@@ -1,5 +1,5 @@
 import React, { useContext, Fragment } from "react";
-import { UserContext } from "../../contexts/UserContext";
+import { UserContext } from "../../Providers/UserProvider";
 import backgroundImage from "../../Images/rideoptionsbg.png";
 import "office-ui-fabric-react/dist/css/fabric.css";
 import "./UserHome.sass";

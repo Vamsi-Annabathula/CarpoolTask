@@ -1,13 +1,13 @@
 import React, { useContext, Fragment, useEffect, useState } from "react";
-import { UserContext } from "../../contexts/UserContext";
+import { UserContext } from "../../Providers/UserProvider";
 import {
   fetchOffer,
   fetchOfferRides,
   updateOffer,
   deleteOffer,
 } from "../../Services/OfferCalls";
-import { OfferContext } from "../../contexts/OfferContext";
-import { RideContext } from "../../contexts/RideContext";
+import { OfferContext } from "../../Providers/OfferProvider";
+import { RideContext } from "../../Providers/RideProvider";
 import { acceptOrRejectRide, requestRide } from "../../Services/RideCalls";
 import { useParams, useHistory } from "react-router";
 import { Icon } from "office-ui-fabric-react";

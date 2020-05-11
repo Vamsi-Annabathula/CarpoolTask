@@ -2,7 +2,7 @@ import React, { useState, useContext, Fragment } from "react";
 import { Icon } from "office-ui-fabric-react";
 import homebg from "../../Images/homebg.png";
 import { useHistory, Redirect } from "react-router";
-import { UserContext } from "../../contexts/UserContext";
+import { UserContext } from "../../Providers/UserProvider";
 import { SignupAPI } from "../../Services/UserCalls";
 import Loader from "../Loader/Loader";
 import ErrorPopup from "../ErrorPopup/ErrorPopup";
