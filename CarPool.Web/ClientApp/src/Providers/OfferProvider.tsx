@@ -17,12 +17,12 @@ const InitialOfferState: IOfferState = {
 };
 
 const OfferContextProvider = (props: any) => {
-  const [offerState, offerDispatch] = useReducer(
-    OffersReducer,
-    InitialOfferState
-  );
+  // const [offerState, offerDispatch] = useReducer(
+  //   OffersReducer,
+  //   InitialOfferState
+  // );
   return (
-    <OfferContext.Provider value={{ offerState, offerDispatch }}>
+    <OfferContext.Provider value={{ ...InitialOfferState }}>
       {props.children}
     </OfferContext.Provider>
   );
